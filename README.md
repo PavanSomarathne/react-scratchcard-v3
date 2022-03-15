@@ -1,4 +1,4 @@
-# react-scratchcard-v2
+# react-scratchcard-v3
 
 > A scratchcard component for React
 
@@ -6,14 +6,9 @@
 
 
 ## Note
-This is a clone of https://github.com/aleksik/react-scratchcard
+This is a clone of https://github.com/dopey2/react-scratchcard-v2
 ##### Improvement:
-- Resize the image using width and height props (in the original repo, the image was croped)
-- Smooth fade out animation on scratch complete
-- Add type definition (ts)
-- Change brush size through props
-- Use custom brush through props
-- Define a custom check zone through props
+- Added necessary precautions for 'Unable to preventDefault inside passive event listener' error
 
 ## Demo
 
@@ -22,11 +17,11 @@ This is a clone of https://github.com/aleksik/react-scratchcard
 ## Install
 
 ```bash
-npm install --save react-scratchcard-v2
+npm install --save react-scratchcard-v3
 ```
 or
 ```bash
-yarn add react-scratchcard-v2 
+yarn add react-scratchcard-v3 
 ```
 
 
@@ -34,7 +29,7 @@ yarn add react-scratchcard-v2
 
 ```tsx
 import React, { useRef }  from 'react';
-import ScratchCard from 'react-scratchcard-v2';
+import ScratchCard from 'react-scratchcard-v3';
 
 import * as IMG from './img.jpg';
 
@@ -99,7 +94,7 @@ const App = () => {
 or you can use CUSTOM_BRUSH_PRESET object
 
 ```tsx
-import { CUSTOM_BRUSH_PRESET } from 'react-scratchcard-v2';
+import { CUSTOM_BRUSH_PRESET } from 'react-scratchcard-v3';
 
 const App = () => {
   return (
@@ -156,4 +151,4 @@ const App = () => {
 
 ## License
 
-MIT © [dopey2](https://github.com/dopey2) 
+MIT © [PavanS](https://pavans.gq) 
