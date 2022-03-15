@@ -4,7 +4,7 @@
   "description": "A scratchcard component for React",
   "author": "PavanS",
   "license": "MIT",
-  "repository": "dopey2/react-scratchcard-v2",
+  "repository": "pavanpabs/react-scratchcard-v3",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
