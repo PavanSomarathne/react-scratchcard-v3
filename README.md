@@ -124,9 +124,11 @@ const App = () => {
 | height            | number          |             |
 | image             | File or Base64  |             |
 | finishPercent     | ?number         | 70          |
+| triggerPercent    | ?number         | 5           |
 | brushSize         | ?number         | 20          |
 | fadeOutOnComplete | ?boolean        | true        |
 | onComplete        | ?callback       |             |
+| onTrigger         | ?callback       |             |
 | customBrush       | ?CustomBrush    |             |
 | customCheckZone   | ?CustomCheckZone|             |
 
@@ -151,4 +153,4 @@ const App = () => {
 
 ## License
 
-MIT © [PavanS](https://pavans.gq) 
+MIT © [PavanS](https://pavanpabs.github.io/) 
