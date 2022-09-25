@@ -23,7 +23,9 @@ interface Props {
   height: number
   image: any
   finishPercent?: number
+  triggerPercent?: number
   onComplete?: () => void
+  onTrigger?: () => void
   brushSize?: number
   fadeOutOnComplete?: boolean
   children?: any
@@ -175,6 +177,25 @@ class Scratch extends Component<Props, State> {
     }
   }
 
+  handleTriggerPercentage(filledInPixels = 0) {
+    let finishPercent = 5;
+    if (this.props.triggerPercent !== undefined) {
+      finishPercent = this.props.triggerPercent;
+    }
+
+    if (filledInPixels > finishPercent) {
+      // if (this.props.fadeOutOnComplete !== false) {
+      //   this.canvas.style.transition = '1s';
+      //   this.canvas.style.opacity = '0';
+      // }
+
+      // this.setState({ finished: true });
+      if (this.props.onTrigger) {
+        this.props.onTrigger();
+      }
+    }
+  }
+
   handleMouseDown = (e: any) => {
     this.isDrawing = true;
     this.lastPoint = this.getMouse(e, this.canvas);
@@ -215,6 +236,7 @@ class Scratch extends Component<Props, State> {
 
     this.lastPoint = currentPoint;
     this.handlePercentage(this.getFilledInPixels(32));
+    this.handleTriggerPercentage(this.getFilledInPixels(32));
   }
 
   handleMouseUp = () => {
