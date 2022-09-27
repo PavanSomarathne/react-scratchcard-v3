@@ -159,13 +159,12 @@ class Scratch extends Component<Props, State> {
   }
 
   handlePercentage(filledInPixels = 0) {
-    console.log('Inside handlePercentage');
     let finishPercent = 70;
     if (this.props.finishPercent !== undefined) {
       finishPercent = this.props.finishPercent;
     }
 
-    if (filledInPixels > finishPercent) {
+    if (filledInPixels === finishPercent) {
       if (this.props.fadeOutOnComplete !== false) {
         this.canvas.style.transition = '1s';
         this.canvas.style.opacity = '0';
@@ -179,15 +178,12 @@ class Scratch extends Component<Props, State> {
   }
 
   handleTriggerPercentage(filledInPixels = 0) {
-    console.log('Inside handleTriggerPercentage');
-    console.log('triggerPercent',this.props.triggerPercent);
-    console.log('filledInPixels',filledInPixels);
     let finishPercent = 5;
     if (this.props.triggerPercent !== undefined) {
       finishPercent = this.props.triggerPercent;
     }
 
-    if (filledInPixels > finishPercent) {
+    if (filledInPixels === finishPercent) {
       // if (this.props.fadeOutOnComplete !== false) {
       //   this.canvas.style.transition = '1s';
       //   this.canvas.style.opacity = '0';
@@ -195,7 +191,6 @@ class Scratch extends Component<Props, State> {
 
       // this.setState({ finished: true });
       if (this.props.onTrigger) {
-        console.log('onTrigger triggered');
         this.props.onTrigger();
       }
     }
@@ -240,7 +235,6 @@ class Scratch extends Component<Props, State> {
     }
 
     this.lastPoint = currentPoint;
-    console.log('Inside handleMouseMove');
     this.handlePercentage(this.getFilledInPixels(32));
     this.handleTriggerPercentage(this.getFilledInPixels(32));
   }
