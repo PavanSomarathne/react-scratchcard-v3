@@ -206,7 +206,7 @@ class Scratch extends Component<Props, State> {
       return;
     }
 
-    // e.preventDefault();
+    e.preventDefault();
 
     const currentPoint = this.getMouse(e, this.canvas);
     const distance = this.distanceBetween(this.lastPoint, currentPoint);
